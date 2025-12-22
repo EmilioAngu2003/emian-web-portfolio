@@ -1,0 +1,35 @@
+---
+import Emian from "../assets/Emian.svg";
+import GitHub from "../assets/github.svg";
+import LinkedIn from "../assets/linkedin.svg";
+---
+
+<footer class="relative bg-light h-96 z-10">
+  <div
+    class="w-full h-full max-w-7xl mx-auto flex flex-col items-center justify-between p-8 pb-12"
+  >
+    <Emian class="fill-secondary h-16" />
+    <div
+      class="flex items-center justify-center gap-6 *:size-8 *:cursor-pointer *:hover:opacity-80 flex-1"
+    >
+      <GitHub class="stroke-secondary" />
+      <LinkedIn class="fill-secondary" />
+    </div>
+    <nav class="flex-3 flex items-center justify-center">
+      <ul
+        class="flex gap-8 text-lg *:hover:underline *:hover:underline-offset-2"
+      >
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/proyectos">Proyectos</a></li>
+        <li><a href="/experiencia">Experiencia</a></li>
+        <li><a href="/sobre-mi">Sobre mi</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="absolute bottom-0 bg-secondary w-full h-12 text-white flex justify-center items-center"
+  >
+    <p>© 2025 Emilio Octavio Angulo Ordoñez</p>
+  </div>
+</footer>
