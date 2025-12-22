@@ -2,6 +2,8 @@
 
 Este proyecto es mi portafolio personal, diseñado para mostrar mi trayectoria como **Desarrollador de Software Full-Stack Junior**. El objetivo principal es presentar mis proyectos destacados, mi stack tecnológico y facilitar un canal de contacto profesional.
 
+🔗 **Demo en vivo:** [emian-web-portfolio.netlify.app](https://emian-web-portfolio.netlify.app)
+
 ## 🚀 Tecnologías Utilizadas
 
 Para el desarrollo de esta web he seleccionado herramientas modernas que priorizan el rendimiento y la experiencia de usuario:
