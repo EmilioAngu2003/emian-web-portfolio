@@ -11,7 +11,7 @@ const { title, tags, image } = Astro.props;
 <div
   class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col items-center pb-6"
 >
-  <div class="w-full aspect-[4/3] bg-gray-400 mb-6">
+  <div class="w-full aspect-card bg-gray-400 mb-6">
     {
       image && (
         <img src={image} alt={title} class="w-full h-full object-cover" />
