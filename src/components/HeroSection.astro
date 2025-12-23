@@ -1,24 +1,22 @@
 ---
 import HeroGuy from "../assets/hero-guy.svg";
+import SectionWrapper from "./SectionWrapper.astro";
 ---
 
-<section class="w-full max-w-7xl mx-auto">
-  <div
-    class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[calc(100vh-80px)] relative gap-12"
-  >
-    <div class="flex flex-col items-start gap-6 z-10">
-      <h1 class="text-7xl xl:text-8xl text-secondary leading-tight">
-        Emilio Angulo
-      </h1>
-      <h2 class="text-4xl xl:text-5xl">
-        Desarrollador de Software <span class="font-bold"
+<SectionWrapper class="h-screen">
+  <div class="grid grid-cols-1 lg:grid-cols-2 items-center h-full gap-12">
+    <div class="flex flex-col items-start gap-6">
+      <h1 class="text-7xl text-secondary">Emilio Angulo</h1>
+      <h2 class="text-5xl">
+        Desarrollador de Software <span class="font-bold text-primary"
           >Full-Stack Junior</span
         >
       </h2>
-      <p class="max-w-xl text-lg">
-        Soy <span class="font-bold">Ingenioso, Preciso y Comprometido</span> con el
-        objetivo de iniciar mi carrera profesional, aportando valor en la creación
-        de software útil y escalable. [cite: 8]
+      <p class="text-lg">
+        Soy <span class="font-bold text-primary"
+          >Ingenioso, Preciso y Comprometido</span
+        > con el objetivo de iniciar mi carrera profesional, aportando valor en la
+        creación de software útil y escalable.
       </p>
       <a
         href="/contacto"
@@ -28,8 +26,8 @@ import HeroGuy from "../assets/hero-guy.svg";
       </a>
     </div>
 
-    <div class="relative flex justify-center items-center">
+    <div class="flex justify-center items-center">
       <HeroGuy class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl" />
     </div>
   </div>
-</section>
+</SectionWrapper>

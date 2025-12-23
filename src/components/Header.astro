@@ -2,10 +2,12 @@
 import Emian from "../assets/emian.svg";
 import LanguageSelector from "./LanguageSelector.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import SectionWrapper from "./SectionWrapper.astro";
 ---
 
-<header
-  class="fixed right-0 left-0 top-0 flex justify-between items-center p-8 w-full max-w-7xl mx-auto"
+<SectionWrapper
+  tagName="header"
+  class="fixed right-0 left-0 top-0 flex justify-between items-center z-10"
 >
   <Emian class="fill-secondary h-6" />
 
@@ -28,4 +30,4 @@ import ThemeToggle from "./ThemeToggle.astro";
       Descargar CV
     </button>
   </div>
-</header>
+</SectionWrapper>

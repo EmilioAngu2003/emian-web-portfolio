@@ -2,11 +2,13 @@
 import Emian from "../assets/emian.svg";
 import GitHub from "../assets/github.svg";
 import LinkedIn from "../assets/linkedin.svg";
+import SectionWrapper from "./SectionWrapper.astro";
 ---
 
 <footer class="relative bg-light h-96 z-10">
-  <div
-    class="w-full h-full max-w-7xl mx-auto flex flex-col items-center justify-between p-8 pb-12"
+  <SectionWrapper
+    tagName="div"
+    class="h-full flex flex-col items-center justify-between pb-12"
   >
     <Emian class="fill-secondary h-16" />
     <div
@@ -26,7 +28,7 @@ import LinkedIn from "../assets/linkedin.svg";
         <li><a href="/contacto">Contacto</a></li>
       </ul>
     </nav>
-  </div>
+  </SectionWrapper>
   <div
     class="absolute bottom-0 bg-secondary w-full h-12 text-white flex justify-center items-center"
   >
