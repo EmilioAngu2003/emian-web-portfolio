@@ -11,12 +11,20 @@ import SectionWrapper from "./SectionWrapper.astro";
     class="h-full flex flex-col items-center justify-between pb-12"
   >
     <Emian class="fill-secondary h-16" />
-    <div
-      class="flex items-center justify-center gap-6 *:size-8 *:cursor-pointer *:hover:opacity-80 flex-1"
+    <ul
+      class="flex items-center justify-center gap-6 *:hover:scale-105 *:transition-transform flex-1"
     >
-      <GitHub class="stroke-secondary" />
-      <LinkedIn class="fill-secondary" />
-    </div>
+      <li>
+        <a href="https://github.com/EmilioAngu2003" target="_blank"
+          ><GitHub class="stroke-secondary size-8" /></a
+        >
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/emilio-angulo/" target="_blank"
+          ><LinkedIn class="fill-secondary size-8" /></a
+        >
+      </li>
+    </ul>
     <nav class="flex-3 flex items-center justify-center">
       <ul
         class="flex gap-8 text-lg *:hover:underline *:hover:underline-offset-2"
