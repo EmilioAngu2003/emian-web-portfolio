@@ -4,16 +4,19 @@ import SectionWrapper from "./SectionWrapper.astro";
 
 const projects = [
   {
-    title: "Multi-Auth Project",
+    title: "Multi-Auth",
     tags: ["C#", ".NET"],
+    href: "/proyectos/multi-auth",
   },
   {
     title: "E-Commerce Monolito",
     tags: ["C#", ".NET", "SQL Server"],
+    href: "/proyectos/e-commerce-monolito",
   },
   {
     title: "Gestor de Facturas",
     tags: ["C#", ".NET", "SQL Server"],
+    href: "/proyectos/gestor-de-facturas",
   },
 ];
 ---
@@ -33,6 +36,7 @@ const projects = [
             <ProjectCard
               title={project.title}
               tags={project.tags}
+              href={project.href}
             />
           </li>
         ))
