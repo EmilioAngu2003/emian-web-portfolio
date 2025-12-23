@@ -6,25 +6,26 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import Button from "@components/ui/Button.astro";
 ---
 
-<SectionWrapper
-  tagName="header"
-  class="fixed right-0 left-0 top-0 flex justify-between items-center z-10"
->
-  <Emian class="fill-secondary h-6" />
+<header class="fixed right-0 left-0 top-0 z-10 bg-base-100">
+  <SectionWrapper tagName="header" class="flex justify-between items-center">
+    <Emian class="fill-secondary h-6" />
 
-  <nav class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-    <ul class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/proyectos">Proyectos</a></li>
-      <li><a href="/experiencia">Experiencia</a></li>
-      <li><a href="/sobre-mi">Sobre mi</a></li>
-      <li><a href="/contacto">Contacto</a></li>
-    </ul>
-  </nav>
+    <nav class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <ul
+        class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2"
+      >
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/proyectos">Proyectos</a></li>
+        <li><a href="/experiencia">Experiencia</a></li>
+        <li><a href="/sobre-mi">Sobre mi</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <div class="flex gap-4 items-center">
-    <ThemeToggle />
-    <LanguageSelector />
-    <Button variant="secondary">Descargar CV</Button>
-  </div>
-</SectionWrapper>
+    <div class="flex gap-4 items-center">
+      <ThemeToggle />
+      <LanguageSelector />
+      <Button variant="secondary">Descargar CV</Button>
+    </div>
+  </SectionWrapper>
+</header>

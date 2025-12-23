@@ -4,32 +4,34 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import Button from "@components/ui/Button.astro";
 ---
 
-<SectionWrapper class="h-screen">
-  <div
-    class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 items-center h-full gap-12"
-  >
-    <header class="flex flex-col items-start gap-6 self-end">
-      <h1 class="text-7xl text-secondary">Emilio Angulo</h1>
-      <h2 class="text-5xl">
-        Desarrollador de Software <span class="font-bold text-primary"
-          >Full-Stack Junior</span
-        >
-      </h2>
-    </header>
-
-    <div class="flex flex-col items-start gap-6 self-start">
-      <p class="text-lg">
-        Soy <span class="font-bold text-primary"
-          >Ingenioso, Preciso y Comprometido</span
-        > con el objetivo de iniciar mi carrera profesional, aportando valor en la
-        creación de software útil y escalable.
-      </p>
-      <Button href="/contacto" variant="primary" size="lg">CONTÁCTAME</Button>
-    </div>
+<section class="bg-base-100">
+  <SectionWrapper tagName="div" class="h-screen">
     <div
-      class="flex justify-center items-center lg:row-span-2 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3"
+      class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 items-center h-full gap-12"
     >
-      <HeroGuy class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl" />
+      <header class="flex flex-col items-start gap-6 self-end">
+        <h1 class="text-7xl text-secondary">Emilio Angulo</h1>
+        <h2 class="text-5xl">
+          Desarrollador de Software <span class="font-bold text-primary"
+            >Full-Stack Junior</span
+          >
+        </h2>
+      </header>
+
+      <div class="flex flex-col items-start gap-6 self-start">
+        <p class="text-lg">
+          Soy <span class="font-bold text-primary"
+            >Ingenioso, Preciso y Comprometido</span
+          > con el objetivo de iniciar mi carrera profesional, aportando valor en
+          la creación de software útil y escalable.
+        </p>
+        <Button href="/contacto" variant="primary" size="lg">CONTÁCTAME</Button>
+      </div>
+      <div
+        class="flex justify-center items-center lg:row-span-2 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3"
+      >
+        <HeroGuy class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl" />
+      </div>
     </div>
-  </div>
-</SectionWrapper>
+  </SectionWrapper>
+</section>

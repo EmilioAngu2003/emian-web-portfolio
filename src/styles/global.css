@@ -5,7 +5,9 @@
 
   --color-black: #000;
   --color-white: #fff;
-  --color-light: #efefef;
+  --color-base-100: #ffffff;
+  --color-base-200: #efefef;
+  --color-base-300: #e7e7e7;
   --color-gray: #b0b0b0;
   --color-secondary: #595959;
   --color-primary: #1a1a1a;
