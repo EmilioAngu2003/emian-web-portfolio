@@ -3,14 +3,13 @@ interface Props {
   title: string;
   tags: string[];
   image?: string;
+  href: string;
 }
 
-const { title, tags, image } = Astro.props;
+const { title, tags, image, href } = Astro.props;
 ---
 
-<div
-  class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:scale-105 transition-all hover:-translate-y-3 flex flex-col items-center pb-6"
->
+<a href={href} class="group">
   <div class="w-full aspect-card bg-gray-400 mb-6">
     {
       image && (
@@ -30,4 +29,4 @@ const { title, tags, image } = Astro.props;
       ))
     }
   </div>
-</div>
+</a>
