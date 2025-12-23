@@ -3,6 +3,7 @@ import Emian from "../assets/emian.svg";
 import LanguageSelector from "./LanguageSelector.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import SectionWrapper from "./SectionWrapper.astro";
+import Button from "./Button.astro";
 ---
 
 <SectionWrapper
@@ -24,10 +25,6 @@ import SectionWrapper from "./SectionWrapper.astro";
   <div class="flex gap-4 items-center">
     <ThemeToggle />
     <LanguageSelector />
-    <button
-      class="bg-secondary hover:opacity-80 text-white rounded-lg px-4 py-2 cursor-pointer"
-    >
-      Descargar CV
-    </button>
+    <Button variant="secondary">Descargar CV</Button>
   </div>
 </SectionWrapper>

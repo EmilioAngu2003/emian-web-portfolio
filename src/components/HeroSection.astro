@@ -1,6 +1,7 @@
 ---
 import HeroGuy from "../assets/hero-guy.svg";
 import SectionWrapper from "./SectionWrapper.astro";
+import Button from "./Button.astro";
 ---
 
 <SectionWrapper class="h-screen">
@@ -18,12 +19,7 @@ import SectionWrapper from "./SectionWrapper.astro";
         > con el objetivo de iniciar mi carrera profesional, aportando valor en la
         creación de software útil y escalable.
       </p>
-      <a
-        href="/contacto"
-        class="bg-primary rounded-lg text-xl text-white font-bold px-8 py-4 hover:scale-105 transition-transform"
-      >
-        CONTÁCTAME
-      </a>
+      <Button href="/contacto" variant="primary" size="lg">CONTÁCTAME</Button>
     </div>
 
     <div class="flex justify-center items-center">
