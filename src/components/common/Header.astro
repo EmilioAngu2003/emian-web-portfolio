@@ -1,5 +1,5 @@
 ---
-import Emian from "@assets/emian.svg";
+import { Icon } from "astro-icon/components";
 import LanguageSelector from "@components/ui/LanguageSelector.astro";
 import ThemeToggle from "@components/ui/ThemeToggle.astro";
 import SectionWrapper from "@components/sections/SectionWrapper.astro";
@@ -8,8 +8,7 @@ import Button from "@components/ui/Button.astro";
 
 <header class="fixed right-0 left-0 top-0 z-10 bg-base-100">
   <SectionWrapper tagName="header" class="flex justify-between items-center">
-    <Emian class="fill-secondary h-6" />
-
+    <Icon name="emian" class="text-secondary h-6 w-auto" />
     <nav class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <ul
         class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2"

@@ -1,8 +1,6 @@
 ---
-import Emian from "@assets/emian.svg";
-import GitHub from "@assets/github.svg";
-import LinkedIn from "@assets/linkedin.svg";
 import SectionWrapper from "@components/sections/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer class="relative bg-base-200 h-96 z-10">
@@ -10,7 +8,7 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
     tagName="div"
     class="h-full flex flex-col items-center justify-between pb-12"
   >
-    <Emian class="fill-secondary h-16" />
+    <Icon name="emian" class="text-secondary h-16 w-auto" />
     <ul
       class="flex items-center justify-center gap-6 *:hover:scale-105 *:transition-transform flex-1"
     >
@@ -18,14 +16,16 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
         <a
           href="https://github.com/EmilioAngu2003"
           target="_blank"
-          aria-label="GitHub"><GitHub class="stroke-secondary size-8" /></a
+          aria-label="GitHub"
+          ><Icon name="github" class="text-secondary size-8" /></a
         >
       </li>
       <li>
         <a
           href="https://www.linkedin.com/in/emilio-angulo/"
           target="_blank"
-          aria-label="LinkedIn"><LinkedIn class="fill-secondary size-8" /></a
+          aria-label="LinkedIn"
+          ><Icon name="linkedin" class="text-secondary size-8" /></a
         >
       </li>
     </ul>

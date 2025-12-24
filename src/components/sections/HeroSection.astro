@@ -1,5 +1,5 @@
 ---
-import HeroGuy from "@assets/hero-guy.svg";
+import { Icon } from "astro-icon/components";
 import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import Button from "@components/ui/Button.astro";
 ---
@@ -30,7 +30,10 @@ import Button from "@components/ui/Button.astro";
       <div
         class="flex justify-center items-center lg:row-span-2 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3"
       >
-        <HeroGuy class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl" />
+        <Icon
+          name="hero-guy"
+          class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl"
+        />
       </div>
     </div>
   </SectionWrapper>
