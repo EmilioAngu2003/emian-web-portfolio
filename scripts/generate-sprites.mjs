@@ -14,8 +14,8 @@ if (!fs.existsSync(SRC_DIR)) {
 
 // Verificar si la carpeta de destino existe
 if (!fs.existsSync(DEST_DIR)) {
-  console.error(`❌ La carpeta de destino ${DEST_DIR} no existe.`);
-  process.exit(1);
+  console.log(`✅ Creando carpeta de destino: ${DEST_DIR}`);
+  fs.mkdirSync(DEST_DIR, { recursive: true });
 }
 
 // Obtener las subcarpetas
