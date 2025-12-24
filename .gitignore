@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Iconos generados
+public/sprites/
