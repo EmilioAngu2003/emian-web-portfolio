@@ -1,0 +1,129 @@
+---
+import SectionWrapper from "@components/sections/SectionWrapper.astro";
+import Button from "@components/ui/Button.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+export function getStaticPaths() {
+  const projects = [
+    {
+      slug: "multi-auth",
+      title: "Multi-Auth",
+      role: "Diseño de Arquitectura y Desarrollo de la API",
+      status: "Primera Versión",
+      description:
+        "Un sistema de autenticación múltiple, permitiendo a los usuarios iniciar sesión mediante diferentes métodos de forma segura.",
+      stack: [
+        { name: "Lenguaje", values: ["C#"] },
+        { name: "Framework", values: [".NET"] },
+        { name: "Arquitectura", values: ["Minimal API"] },
+      ],
+      demo_url: "https://multi-auth-demo.example.com",
+      repo_url: "https://github.com/EmilioAngu2003/multi-auth",
+    },
+    {
+      slug: "e-commerce-monolito",
+      title: "E-Commerce Monolito",
+      role: "Diseño de Arquitectura y Desarrollo de la API",
+      status: "En desarrollo",
+      description:
+        "API inicial para una plataforma de comercio electrónico. Enfoque en arquitectura robusta y escalable.",
+      stack: [
+        { name: "Lenguaje", values: ["C#"] },
+        { name: "Framework", values: [".NET"] },
+        { name: "Arquitectura", values: ["Clean Architecture"] },
+      ],
+      demo_url: "https://ecommerce-monolito-demo.example.com",
+      repo_url: "https://github.com/EmilioAngu2003/e-commerce-monolito",
+    },
+    {
+      slug: "gestor-de-facturas",
+      title: "Gestor de Facturas",
+      role: "Diseño de Arquitectura, Desarrollo de la API y Frontend",
+      status: "Completado",
+      description:
+        "Un sistema de gestión de facturas, integrando funcionalidades para crear, modificar y eliminar facturas.",
+      stack: [
+        { name: "Lenguaje", values: ["C#"] },
+        { name: "Framework", values: [".NET"] },
+        { name: "Arquitectura", values: ["MVC"] },
+      ],
+      demo_url: "https://gestor-de-facturas-demo.example.com",
+      repo_url: "https://github.com/EmilioAngu2003/gestor-de-facturas",
+    },
+  ];
+
+  const staticPaths = projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { ...project },
+  }));
+
+  console.log(staticPaths);
+
+  return staticPaths;
+}
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <SectionWrapper tagName="article" class="mt-28 flex flex-col gap-4">
+    <header class="flex flex-col gap-2 items-center">
+      <h1 class="text-5xl font-bold">{Astro.props.title}</h1>
+      <p class="text-2xl">{Astro.props.role}</p>
+      <p class="text-sm text-white bg-secondary rounded-full px-4 py-2">
+        {Astro.props.status}
+      </p>
+    </header>
+    <section class="text-center text-lg">
+      <p>{Astro.props.description}</p>
+    </section>
+    <section>
+      <ul class="grid grid-cols-[1fr_1fr] gap-4 text-lg">
+        <li class="place-self-end">
+          <Button
+            href={Astro.props.demo_url}
+            variant="primary"
+            target="_blank"
+            class="flex items-center gap-2"
+          >
+            Demostración
+            <Icon name="external-link" class="size-6" />
+          </Button>
+        </li>
+        <li class="place-self-start">
+          <Button
+            href={Astro.props.repo_url}
+            variant="primary"
+            target="_blank"
+            class="flex items-center gap-2"
+          >
+            Repositorio
+            <Icon name="github-fill" class="size-6" />
+          </Button>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <ul class="flex flex-col gap-4">
+        {
+          Astro.props.stack.map((tech) => (
+            <li class="grid grid-cols-[1fr_1fr] gap-x-8">
+              <h2 class="font-medium text-lg place-self-end self-start">
+                {tech.name}
+              </h2>
+
+              <ul class="flex flex-wrap gap-2 max-w-48">
+                {tech.values.map((v) => (
+                  <li class="text-sm px-2 py-1 border border-secondary rounded-full">
+                    {v}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </SectionWrapper>
+</Layout>
