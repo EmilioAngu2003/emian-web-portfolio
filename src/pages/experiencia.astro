@@ -1,0 +1,83 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SectionWrapper from "@components/sections/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
+
+const experience = {
+  company: "Incloud Solutions",
+  role: "Desarrollador Full Stack en Prácticas",
+  period: "Octubre 2023 - Mayo 2024",
+  location: "Murcia, España",
+  sector: "Software para empresas",
+  achievements: [
+    {
+      title: "Mantenimiento Autónomo",
+      description:
+        "Responsable del mantenimiento técnico de sistemas empresariales complejos tras un periodo de adaptación de solo 3 meses.",
+      icon: "wrench",
+    },
+    {
+      title: "Lógica de Negocio",
+      description:
+        "Desarrollo de funcionalidades críticas para la gestión de fichajes, calendarios laborales y registros de jornada en tiempo real.",
+      icon: "briefcase",
+    },
+    {
+      title: "Calidad de Código",
+      description:
+        "Implementación de patrones para asegurar la escalabilidad del software de la empresa.",
+      icon: "checkbox",
+    },
+  ],
+};
+---
+
+<Layout title="Experiencia">
+  <SectionWrapper class="pt-16 text-center mt-24">
+    <h1 class="text-5xl font-bold mb-8 text-primary">
+      Experiencia Profesional
+    </h1>
+
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold text-secondary mb-2">
+        {experience.company}
+      </h2>
+      <h3 class="text-2xl text-gray-600 mb-6">{experience.role}</h3>
+
+      <ul class="flex flex-wrap justify-center gap-8 text-gray-600">
+        <li class="flex items-center gap-2">
+          <Icon name="calendar" class="size-6" />
+          <span>{experience.period}</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="map-marker" class="size-6" />
+          <span>{experience.location}</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="store" class="size-6" />
+          <span>{experience.sector}</span>
+        </li>
+      </ul>
+    </div>
+  </SectionWrapper>
+
+  <div class="bg-base-200">
+    <SectionWrapper class="pb-16 text-center">
+      <h3 class="text-3xl font-bold mb-10 text-secondary">
+        Logros y Responsabilidades
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          experience.achievements.map((item) => (
+            <div class="bg-base-100 p-8 rounded-xl shadow-sm flex flex-col items-center text-center">
+              <Icon name={item.icon} class="size-12 mb-6 text-primary" />
+              <h4 class="text-xl font-bold mb-4 text-primary">{item.title}</h4>
+              <p class="text-gray-600 leading-relaxed">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </SectionWrapper>
+  </div>
+</Layout>
