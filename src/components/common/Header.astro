@@ -6,10 +6,15 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import Button from "@components/ui/Button.astro";
 ---
 
-<header class="fixed right-0 left-0 top-0 z-10 bg-base-100">
-  <SectionWrapper tagName="header" class="flex justify-between items-center">
+<header class="sticky top-0 z-10 h-header w-full bg-base-100">
+  <SectionWrapper
+    tagName="div"
+    class="h-full flex justify-between items-center gap-4"
+  >
     <Icon name="emian" class="text-secondary h-6 w-auto" />
-    <nav class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+    <nav
+      class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
       <ul
         class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2"
       >
@@ -21,10 +26,71 @@ import Button from "@components/ui/Button.astro";
       </ul>
     </nav>
 
-    <div class="flex gap-4 items-center">
+    <div class="flex gap-4 items-center justify-end flex-1">
       <ThemeToggle />
       <LanguageSelector />
-      <Button variant="secondary">Descargar CV</Button>
+      <Button variant="secondary" class="hidden md:block">Descargar CV</Button>
+    </div>
+
+    <div class="relative h-full flex lg:hidden items-center">
+      <button
+        id="menu-toggle"
+        class="p-2 rounded focus:ring-2 focus:ring-secondary"
+      >
+        <Icon name="menu" class="size-6 text-primary" />
+      </button>
+
+      <SectionWrapper
+        tagName="nav"
+        id="mobile-menu"
+        class="hidden absolute top-menu -right-8 md:top-12 md:right-0 w-screen md:w-48 bg-base-200 rounded shadow-lg p-4 z-10"
+      >
+        <ul class="flex flex-col gap-6">
+          <li><a href="/" class="menu-link">Inicio</a></li>
+          <li><a href="/#proyectos" class="menu-link">Proyectos</a></li>
+          <li><a href="/experiencia" class="menu-link">Experiencia</a></li>
+          <li><a href="/sobre-mi" class="menu-link">Sobre mi</a></li>
+          <li><a href="/contacto" class="menu-link">Contacto</a></li>
+          <li class="md:hidden text-end">
+            <Button variant="secondary">Descargar CV</Button>
+          </li>
+        </ul>
+      </SectionWrapper>
     </div>
   </SectionWrapper>
 </header>
+
+<script>
+  const setupMenu = () => {
+    const btn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".menu-link");
+
+    if (!btn || !menu) return;
+
+    const toggleMenu = () => {
+      menu.classList.toggle("hidden");
+    };
+
+    const closeMenu = () => {
+      menu.classList.add("hidden");
+    };
+
+    btn.addEventListener("click", toggleMenu);
+
+    links.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      const isClickInside =
+        btn.contains(event.target as Node) ||
+        menu.contains(event.target as Node);
+      if (!isClickInside) {
+        closeMenu();
+      }
+    });
+  };
+
+  setupMenu();
+</script>

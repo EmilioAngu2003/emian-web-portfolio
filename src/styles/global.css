@@ -13,4 +13,8 @@
   --color-primary: #1a1a1a;
 
   --aspect-card: 4/3;
+
+  --spacing-header: 6rem;
+  --spacing-content: calc(100vh - var(--spacing-header));
+  --spacing-menu: calc(100% + 2rem);
 }

@@ -33,51 +33,59 @@ const experience = {
 ---
 
 <Layout title="Experiencia">
-  <SectionWrapper class="pt-16 text-center mt-24">
-    <h1 class="text-5xl font-bold mb-8 text-primary">
-      Experiencia Profesional
-    </h1>
+  <div class="md:h-content flex flex-col">
+    <SectionWrapper
+      class="py-16 md:py-8 text-center grow flex justify-center items-center"
+    >
+      <div>
+        <h1 class="text-5xl lg:text-6xl font-bold mb-8 lg:mb-12 text-primary">
+          Experiencia Profesional
+        </h1>
 
-    <div class="mb-12">
-      <h2 class="text-4xl font-bold text-secondary mb-2">
-        {experience.company}
-      </h2>
-      <h3 class="text-2xl text-gray-600 mb-6">{experience.role}</h3>
+        <h2 class="text-4xl lg:text-5xl font-bold text-secondary mb-2">
+          {experience.company}
+        </h2>
+        <h3 class="text-2xl lg:text-3xl mb-10">{experience.role}</h3>
 
-      <ul class="flex flex-wrap justify-center gap-8 text-gray-600">
-        <li class="flex items-center gap-2">
-          <Icon name="calendar" class="size-6" />
-          <span>{experience.period}</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <Icon name="map-marker" class="size-6" />
-          <span>{experience.location}</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <Icon name="store" class="size-6" />
-          <span>{experience.sector}</span>
-        </li>
-      </ul>
-    </div>
-  </SectionWrapper>
-
-  <div class="bg-base-200">
-    <SectionWrapper class="pb-16 text-center">
-      <h3 class="text-3xl font-bold mb-10 text-secondary">
-        Logros y Responsabilidades
-      </h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {
-          experience.achievements.map((item) => (
-            <div class="bg-base-100 p-8 rounded-xl shadow-sm flex flex-col items-center text-center">
-              <Icon name={item.icon} class="size-12 mb-6 text-primary" />
-              <h4 class="text-xl font-bold mb-4 text-primary">{item.title}</h4>
-              <p class="text-gray-600 leading-relaxed">{item.description}</p>
-            </div>
-          ))
-        }
+        <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg">
+          <li class="flex items-center gap-2">
+            <Icon name="calendar" class="size-6" />
+            <span>{experience.period}</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="map-marker" class="size-6" />
+            <span>{experience.location}</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="store" class="size-6" />
+            <span>{experience.sector}</span>
+          </li>
+        </ul>
       </div>
     </SectionWrapper>
+
+    <div class="bg-base-200 py-4 lg:py-6 2xl:py-14">
+      <SectionWrapper class="text-center">
+        <h3 class="text-3xl lg:text-4xl font-bold mb-12 text-secondary">
+          Logros y Responsabilidades
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {
+            experience.achievements.map((item) => (
+              <div class="bg-base-100 p-8 rounded-xl shadow-sm flex flex-col items-center text-center">
+                <Icon name={item.icon} class="size-12 mb-6 text-primary" />
+                <h4 class="text-xl font-bold mb-4 text-primary">
+                  {item.title}
+                </h4>
+                <p class="text-sm lg:text-base lg:leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </SectionWrapper>
+    </div>
   </div>
 </Layout>

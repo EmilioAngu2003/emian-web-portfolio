@@ -48,34 +48,45 @@ const stack = [
 ];
 ---
 
-<section class="bg-base-300 py-20">
-  <SectionWrapper tagName="div">
-    <header>
-      <h2 class="text-5xl font-bold text-center text-gray-800 mb-16">
-        Mi Stack Principal
-      </h2>
-    </header>
+<section class="bg-base-300">
+  <SectionWrapper
+    tagName="div"
+    class="h-content flex justify-center items-center"
+  >
+    <div class="flex-1 w-full">
+      <header>
+        <h2
+          class="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-8 2xl:mb-16"
+        >
+          Mi Stack Principal
+        </h2>
+      </header>
 
-    <ul class="flex flex-col gap-8 justify-center items-center">
-      {
-        stack.map((s) => (
-          <li>
-            <h3 class="text-center text-xl font-medium">{s.title}</h3>
-            <ul class="flex flex-row gap-8 mt-4">
-              {s.groups.map((group) => (
-                <li class="flex flex-wrap gap-12 bg-base-100 px-12 py-6 rounded-lg">
-                  {group.map((tech) => (
-                    <div class="flex flex-col items-center gap-2">
-                      <Svg id={tech.icon} class="size-20" sprite="stack" />
-                      <span>{tech.name}</span>
-                    </div>
-                  ))}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))
-      }
-    </ul>
+      <ul class="flex flex-col gap-8 justify-center items-center">
+        {
+          stack.map((s) => (
+            <li class="w-full lg:w-auto">
+              <h3 class="text-center text-xl font-medium">{s.title}</h3>
+              <ul class="flex flex-row gap-8 mt-4 w-full overflow-x-scroll lg:w-auto lg:overflow-x-visible">
+                {s.groups.map((group) => (
+                  <li class="flex flex-nowrap text-nowrap gap-12 bg-base-100 px-12 py-6 rounded-lg">
+                    {group.map((tech) => (
+                      <div class="flex flex-col items-center gap-2">
+                        <Svg
+                          id={tech.icon}
+                          class="size-14 2xl:size-20"
+                          sprite="stack"
+                        />
+                        <span>{tech.name}</span>
+                      </div>
+                    ))}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </SectionWrapper>
 </section>

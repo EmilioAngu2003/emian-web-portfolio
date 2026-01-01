@@ -5,33 +5,41 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Sobre Mi">
-  <SectionWrapper class="grid grid-cols-[6fr_5fr] gap-6 items-center mt-24">
-    <div>
-      <h1 class="text-7xl font-bold mb-8">Hola, soy Emian</h1>
-      <p class="text-xl mb-4">
-        Me apasiona el proceso de transformar una idea abstracta en una
-        herramienta funcional que resuelva problemas reales.
-      </p>
-      <p class="text-xl">
-        Mi enfoque como desarrollador se basa en tres principios: la <strong
-          >precisión</strong
-        > al escribir código limpio, el <strong>ingenio</strong> para resolver bloqueos
-        técnicos y un <strong>compromiso</strong> total con los objetivos del equipo.
-      </p>
-    </div>
-    <div><Icon name="programming" class="w-full h-auto translate-y-8" /></div>
-  </SectionWrapper>
-  <div class="bg-base-200">
-    <SectionWrapper>
-      <h2 class="text-2xl font-bold mb-4">Fuera del Codigo</h2>
-      <ul
-        class="flex gap-4 *:bg-base-100 *:rounded-full *:size-16 *:flex *:items-center *:justify-center"
-      >
-        <li><Icon name="guitar" class="text-primary size-12" /></li>
-        <li><Icon name="joystick" class="text-primary size-12" /></li>
-        <li><Icon name="chess" class="text-primary size-12" /></li>
-        <li><Icon name="pan" class="text-primary size-12" /></li>
-      </ul>
+  <div class="md:h-content flex flex-col">
+    <SectionWrapper
+      class="grid grid-cols-1 md:grid-cols-[6fr_5fr] gap-6 items-center"
+    >
+      <div>
+        <h1 class="text-5xl lg:text-7xl font-bold mb-8">Hola, soy Emian</h1>
+        <p class="text-base lg:text-xl mb-4">
+          Me apasiona el proceso de transformar una idea abstracta en una
+          herramienta funcional que resuelva problemas reales.
+        </p>
+        <p class="text-base lg:text-xl">
+          Mi enfoque como desarrollador se basa en tres principios: la <strong
+            >precisión</strong
+          > al escribir código limpio, el <strong>ingenio</strong> para resolver bloqueos
+          técnicos y un <strong>compromiso</strong> total con los objetivos del equipo.
+        </p>
+      </div>
+      <div>
+        <Icon name="programming" class="w-full h-auto translate-y-8" />
+      </div>
     </SectionWrapper>
+    <div class="bg-base-200 grow">
+      <SectionWrapper>
+        <h2 class="text-3xl font-bold mb-8 text-center md:text-left">
+          Fuera del Codigo
+        </h2>
+        <ul
+          class="flex flex-wrap justify-center md:justify-start gap-4 *:bg-base-100 *:rounded-full *:size-16 md:*:size-20 *:flex *:items-center *:justify-center text-primary"
+        >
+          <li><Icon name="guitar" class="size-8 md:size-12" /></li>
+          <li><Icon name="joystick" class="size-8 md:size-12" /></li>
+          <li><Icon name="chess" class="size-8 md:size-12" /></li>
+          <li><Icon name="pan" class="size-8 md:size-12" /></li>
+        </ul>
+      </SectionWrapper>
+    </div>
   </div>
 </Layout>

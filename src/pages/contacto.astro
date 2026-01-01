@@ -6,45 +6,50 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Contacto">
-  <SectionWrapper class="grid grid-cols-[1fr_1fr] gap-6 items-center mt-24">
-    <div>
-      <h1 class="text-5xl font-bold mb-8">Contacto</h1>
+  <SectionWrapper class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+    <div class="text-center lg:text-left">
+      <h1 class="text-4xl md:text-5xl font-bold mb-8">Contacto</h1>
       <p class="text-lg mb-4">
         Estoy buscando activamente mi primera oportunidad laboral como
         desarrollador y tengo <strong
           >disponibilidad inmediata para reubicación en cualquier lugar.</strong
         >
       </p>
-      <div>
+      <div class="flex justify-center lg:justify-start">
         <Icon name="mail" class="w-full h-auto" />
       </div>
     </div>
     <form action="" class="flex flex-col">
-      <label for="name" class="text-xl mb-2">Nombre</label>
+      <label for="name" class="text-lg font-medium mb-2">Nombre</label>
       <input
         type="text"
         name="name"
         id="name"
         required
-        class="border rounded-md p-2 mb-6"
+        class="border rounded-md p-3 mb-6 focus:ring-2 focus:ring-primary outline-none transition-all"
       />
-      <label for="email" class="text-xl mb-2">Email</label>
+      <label for="email" class="text-lg font-medium mb-2">Email</label>
       <input
         type="email"
         name="email"
         id="email"
         required
-        class="border rounded-md p-2 mb-6"
+        class="border rounded-md p-3 mb-6 focus:ring-2 focus:ring-primary outline-none transition-all"
       />
-      <label for="message" class="text-xl mb-2">Mensaje</label>
+      <label for="message" class="text-lg font-medium mb-2">Mensaje</label>
       <textarea
         name="message"
         id="message"
         rows="4"
         required
-        class="border rounded-md p-2 mb-6"></textarea>
+        class="border rounded-md p-3 mb-6 focus:ring-2 focus:ring-primary outline-none transition-all"
+      ></textarea>
       <div>
-        <Button type="submit" variant="primary">Enviar</Button>
+        <Button
+          type="submit"
+          variant="primary"
+          class="w-full md:w-auto min-w-32">Enviar</Button
+        >
       </div>
     </form>
   </SectionWrapper>

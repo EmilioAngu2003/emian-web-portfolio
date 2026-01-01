@@ -5,21 +5,22 @@ import Button from "@components/ui/Button.astro";
 ---
 
 <section class="bg-base-100">
-  <SectionWrapper tagName="div" class="h-screen">
+  <SectionWrapper tagName="div" class="h-content overflow-hidden">
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 items-center h-full gap-12"
+      class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 items-center h-full gap-8 lg:gap-12 text-center lg:text-left"
     >
-      <header class="flex flex-col items-start gap-6 self-end">
-        <h1 class="text-7xl text-secondary">Emilio Angulo</h1>
-        <h2 class="text-5xl">
-          Desarrollador de Software <span class="font-bold text-primary"
-            >Full-Stack Junior</span
-          >
+      <header class="self-end">
+        <h1 class="text-5xl md:text-7xl text-secondary mb-2 lg:mb-6">
+          Emilio Angulo
+        </h1>
+        <h2 class="text-2xl md:text-5xl *:block">
+          <span>Desarrollador de Software</span>
+          <span class="font-bold text-primary">Full-Stack Junior</span>
         </h2>
       </header>
 
-      <div class="flex flex-col items-start gap-6 self-start">
-        <p class="text-lg">
+      <div class="self-start">
+        <p class="md:text-lg mb-6">
           Soy <span class="font-bold text-primary"
             >Ingenioso, Preciso y Comprometido</span
           > con el objetivo de iniciar mi carrera profesional, aportando valor en
@@ -32,7 +33,7 @@ import Button from "@components/ui/Button.astro";
       >
         <Icon
           name="hero-guy"
-          class="-rotate-3 w-full h-auto max-w-2xl drop-shadow-2xl"
+          class="-rotate-3 w-full h-auto max-w-xl lg:max-w-2xl lg:drop-shadow-2xl"
         />
       </div>
     </div>

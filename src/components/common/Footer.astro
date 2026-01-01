@@ -3,12 +3,12 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<footer class="relative bg-base-200 h-96 z-10">
+<footer class="relative bg-base-200 md:h-96 z-10">
   <SectionWrapper
     tagName="div"
-    class="h-full flex flex-col items-center justify-between pb-12"
+    class="h-full flex flex-col items-center justify-between pb-12 gap-4"
   >
-    <Icon name="emian" class="text-secondary h-16 w-auto" />
+    <Icon name="emian" class="text-secondary h-8 md:h-16 w-auto" />
     <ul
       class="flex items-center justify-center gap-6 *:hover:scale-105 *:transition-transform flex-1"
     >
@@ -31,7 +31,7 @@ import { Icon } from "astro-icon/components";
     </ul>
     <nav class="flex-3 flex items-center justify-center">
       <ul
-        class="flex gap-8 text-lg *:hover:underline *:hover:underline-offset-2"
+        class="flex flex-col md:flex-row gap-x-8 gap-y-2 items-center py-6 text-lg *:hover:underline *:hover:underline-offset-2"
       >
         <li><a href="/">Inicio</a></li>
         <li><a href="/#proyectos">Proyectos</a></li>

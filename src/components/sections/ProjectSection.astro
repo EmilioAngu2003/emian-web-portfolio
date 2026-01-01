@@ -21,26 +21,33 @@ const projects = [
 ];
 ---
 
-<section class="bg-base-200 py-20" id="proyectos">
-  <SectionWrapper tagName="div">
-    <header>
-      <h2 class="text-5xl font-bold text-center text-gray-800 mb-16">
-        Proyectos Destacados
-      </h2>
-    </header>
+<section class="bg-base-200 scroll-mt-header" id="proyectos">
+  <SectionWrapper
+    tagName="div"
+    class="md:h-content flex justify-center items-center"
+  >
+    <div class="flex-1">
+      <header>
+        <h2
+          class="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-16"
+        >
+          Proyectos Destacados
+        </h2>
+      </header>
 
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        projects.map((project) => (
-          <li>
-            <ProjectCard
-              title={project.title}
-              tags={project.tags}
-              href={project.href}
-            />
-          </li>
-        ))
-      }
-    </ul>
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          projects.map((project) => (
+            <li>
+              <ProjectCard
+                title={project.title}
+                tags={project.tags}
+                href={project.href}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </SectionWrapper>
 </section>
