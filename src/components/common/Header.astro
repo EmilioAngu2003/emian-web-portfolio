@@ -78,6 +78,8 @@ import Button from "@components/ui/Button.astro";
     const header = document.getElementById("main-header");
     const anchors = document.querySelectorAll(".anchor");
 
+    const isMobile = window.innerWidth < 1024;
+
     let lastScrollY = window.scrollY;
     let isScrollingToAnchor = false;
 
@@ -92,7 +94,6 @@ import Button from "@components/ui/Button.astro";
     };
 
     const handleScroll = () => {
-      const isMobile = window.innerWidth < 1024;
       if (!isMobile || isScrollingToAnchor) return;
 
       const currentScrollY = window.scrollY;
@@ -119,6 +120,7 @@ import Button from "@components/ui/Button.astro";
 
     anchors.forEach((anchor) => {
       anchor.addEventListener("click", () => {
+        if (!isMobile) return;
         isScrollingToAnchor = true;
         setHeaderVisible(false);
       });
