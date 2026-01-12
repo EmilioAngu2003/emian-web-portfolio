@@ -15,6 +15,6 @@
   --aspect-card: 4/3;
 
   --spacing-header: 6rem;
-  --spacing-content: calc(100vh - var(--spacing-header));
-  --spacing-menu: calc(100% + 2rem);
+  --spacing-content: calc(100svh - var(--spacing-header));
+  --spacing-menu: calc(100% + 1rem);
 }

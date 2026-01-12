@@ -5,7 +5,7 @@ import Button from "@components/ui/Button.astro";
 ---
 
 <section class="bg-base-100">
-  <SectionWrapper tagName="div" class="h-content overflow-hidden">
+  <SectionWrapper tagName="div">
     <div
       class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 items-center h-full gap-8 lg:gap-12 text-center lg:text-left"
     >
@@ -20,11 +20,11 @@ import Button from "@components/ui/Button.astro";
       </header>
 
       <div class="self-start">
-        <p class="md:text-lg mb-6">
-          Soy <span class="font-bold text-primary"
-            >Ingenioso, Preciso y Comprometido</span
-          > con el objetivo de iniciar mi carrera profesional, aportando valor en
-          la creación de software útil y escalable.
+        <p class="md:text-lg mb-6 *:[span]:text-primary *:[span]:font-bold">
+          Me apasiona entender la maquinaria detrás de cada servicio para
+          construir <span>arquitecturas sólidas</span> y soluciones precisas. Enfocado
+          en el <span>alto rendimiento</span> y la <span>escalabilidad</span> desde
+          la primera línea de código.
         </p>
         <Button href="/contacto" variant="primary" size="lg">CONTÁCTAME</Button>
       </div>

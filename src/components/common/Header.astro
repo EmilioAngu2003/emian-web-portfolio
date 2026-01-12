@@ -6,17 +6,23 @@ import SectionWrapper from "@components/sections/SectionWrapper.astro";
 import Button from "@components/ui/Button.astro";
 ---
 
-<header class="sticky top-0 z-10 h-header w-full bg-base-100">
+<header
+  id="main-header"
+  data-expanded="true"
+  class="sticky top-0 z-20 h-header w-full bg-base-100 text-secondary transition-transform duration-300 data-[expanded=false]:-translate-y-full"
+>
   <SectionWrapper
     tagName="div"
-    class="h-full flex justify-between items-center gap-4"
+    class="h-full flex justify-between items-center gap-4 bg-base-100"
   >
-    <Icon name="emian" class="text-secondary h-6 w-auto" />
+    <a href="/">
+      <Icon name="emian" class="h-6 w-auto" />
+    </a>
     <nav
       class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
     >
       <ul
-        class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2"
+        class="flex gap-6 text-lg *:hover:underline *:hover:underline-offset-2 *:hover:text-primary"
       >
         <li><a href="/">Inicio</a></li>
         <li><a href="/#proyectos">Proyectos</a></li>
@@ -35,22 +41,27 @@ import Button from "@components/ui/Button.astro";
     <div class="relative h-full flex lg:hidden items-center">
       <button
         id="menu-toggle"
+        aria-haspopup="true"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
         class="p-2 rounded focus:ring-2 focus:ring-secondary"
       >
-        <Icon name="menu" class="size-6 text-primary" />
+        <Icon name="menu" class="size-6" />
       </button>
 
       <SectionWrapper
         tagName="nav"
         id="mobile-menu"
-        class="hidden absolute top-menu -right-8 md:top-12 md:right-0 w-screen md:w-48 bg-base-200 rounded shadow-lg p-4 z-10"
+        role="listbox"
+        data-expanded="false"
+        class="absolute top-menu -right-4 md:top-20 md:right-0 w-screen md:w-48 bg-base-200 rounded-b -z-10 transition-transform duration-300 data-[expanded=false]:-translate-y-full data-[expanded=true]:shadow-lg"
       >
         <ul class="flex flex-col gap-6">
-          <li><a href="/" class="menu-link">Inicio</a></li>
-          <li><a href="/#proyectos" class="menu-link">Proyectos</a></li>
-          <li><a href="/experiencia" class="menu-link">Experiencia</a></li>
-          <li><a href="/sobre-mi" class="menu-link">Sobre mi</a></li>
-          <li><a href="/contacto" class="menu-link">Contacto</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#proyectos" class="anchor">Proyectos</a></li>
+          <li><a href="/experiencia">Experiencia</a></li>
+          <li><a href="/sobre-mi">Sobre mi</a></li>
+          <li><a href="/contacto">Contacto</a></li>
           <li class="md:hidden text-end">
             <Button variant="secondary">Descargar CV</Button>
           </li>
@@ -61,36 +72,59 @@ import Button from "@components/ui/Button.astro";
 </header>
 
 <script>
-  const setupMenu = () => {
-    const btn = document.getElementById("menu-toggle");
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("menu-toggle");
     const menu = document.getElementById("mobile-menu");
-    const links = document.querySelectorAll(".menu-link");
+    const header = document.getElementById("main-header");
+    const anchors = document.querySelectorAll(".anchor");
 
-    if (!btn || !menu) return;
+    let lastScrollY = window.scrollY;
+    let isScrollingToAnchor = false;
 
-    const toggleMenu = () => {
-      menu.classList.toggle("hidden");
+    const updateMenuState = (isOpen: boolean) => {
+      menu?.setAttribute("data-expanded", String(isOpen));
+      button?.setAttribute("aria-expanded", String(isOpen));
     };
 
-    const closeMenu = () => {
-      menu.classList.add("hidden");
+    const setHeaderVisible = (isVisible: boolean) => {
+      if (!isVisible) updateMenuState(false);
+      header?.setAttribute("data-expanded", String(isVisible));
     };
 
-    btn.addEventListener("click", toggleMenu);
+    const handleScroll = () => {
+      const isMobile = window.innerWidth < 1024;
+      if (!isMobile || isScrollingToAnchor) return;
 
-    links.forEach((link) => {
-      link.addEventListener("click", closeMenu);
+      const currentScrollY = window.scrollY;
+      const isScrollingDown =
+        currentScrollY > lastScrollY && currentScrollY > 50;
+
+      setHeaderVisible(!isScrollingDown);
+      lastScrollY = currentScrollY;
+    };
+
+    button?.addEventListener("click", () => {
+      const isExpanded = menu?.dataset.expanded === "true";
+      updateMenuState(!isExpanded);
     });
 
-    document.addEventListener("click", (event) => {
-      const isClickInside =
-        btn.contains(event.target as Node) ||
-        menu.contains(event.target as Node);
-      if (!isClickInside) {
-        closeMenu();
+    document.addEventListener("click", (e) => {
+      if (
+        !button?.contains(e.target as Node) &&
+        !menu?.contains(e.target as Node)
+      ) {
+        updateMenuState(false);
       }
     });
-  };
 
-  setupMenu();
+    anchors.forEach((anchor) => {
+      anchor.addEventListener("click", () => {
+        isScrollingToAnchor = true;
+        setHeaderVisible(false);
+      });
+    });
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scrollend", () => (isScrollingToAnchor = false));
+  });
 </script>

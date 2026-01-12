@@ -2,16 +2,16 @@
 interface Props {
   class?: string;
   tagName?: string;
-  id?: string | number;
+  [x: string]: any;
 }
 
-const { class: className, tagName = "section", id } = Astro.props;
+const { class: className, tagName = "section", ...rest } = Astro.props;
 const Element = tagName;
 ---
 
 <Element
-  class:list={["w-full max-w-7xl mx-auto p-8", className]}
-  {...id ? { id } : {}}
+  class:list={["w-full max-w-7xl mx-auto p-4 lg:p-8", className]}
+  {...rest}
 >
   <slot />
 </Element>

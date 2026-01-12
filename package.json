@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node scripts/generate-sprites.mjs && astro dev",
-    "build": "node scripts/generate-sprites.mjs && astro build",
+    "dev": "astro dev",
+    "build": "npm run generate-sprites && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-sprites": "node scripts/generate-sprites.mjs"
   },
   "dependencies": {
     "@astrojs/netlify": "6.6.3",
