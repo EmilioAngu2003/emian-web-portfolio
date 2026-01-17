@@ -24,29 +24,31 @@ const pilares = [
 ];
 ---
 
-<SectionWrapper class="flex justify-center items-center">
-  <div class="flex-1">
-    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
-      Mis Pilares
-    </h2>
+<div class="bg-base-100">
+  <SectionWrapper class="flex justify-center items-center">
+    <div class="flex-1">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+        Mis Pilares
+      </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {
-        pilares.map((pilar) => (
-          <div class="flex flex-col">
-            <div class="bg-base-200 aspect-video rounded-lg flex items-center justify-center mb-6">
-              <Icon name={pilar.icon} class="size-16" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          pilares.map((pilar) => (
+            <div class="flex flex-col">
+              <div class="bg-base-200 aspect-video rounded-lg flex items-center justify-center mb-6">
+                <Icon name={pilar.icon} class="size-16" />
+              </div>
+
+              <h3 class="text-2xl font-bold mb-3 text-gray-900 leading-tight">
+                {pilar.titulo}
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                {pilar.descripcion}
+              </p>
             </div>
-
-            <h3 class="text-2xl font-bold mb-3 text-gray-900 leading-tight">
-              {pilar.titulo}
-            </h3>
-            <p class="text-gray-600 leading-relaxed text-lg">
-              {pilar.descripcion}
-            </p>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
-  </div>
-</SectionWrapper>
+  </SectionWrapper>
+</div>
